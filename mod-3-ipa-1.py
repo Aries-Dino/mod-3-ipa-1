@@ -32,17 +32,20 @@ def shift_letter(letter, shift):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     import string
-    x = string.ascii_uppercase.index(letter)+shift
-    if x <= 25 and x >= -25:
-        return string.ascii_uppercase[x]
-    elif x>25:
-        while x > 25:
-            x = x-26
-        return string.ascii_uppercase[x]
+    if str.isalpha(letter) == True:
+        x = string.ascii_uppercase.index(letter)+shift
+        if x <= 25 and x >= -25:
+            return string.ascii_uppercase[x]
+        elif x>25:
+            while x > 25:
+                x = x-26
+            return string.ascii_uppercase[x]
+        else:
+            while x < -25:
+                x = x+26
+            return string.ascii_uppercase[x]
     else:
-        while x < -25:
-            x = x+26
-        return string.ascii_uppercase[x]
+        return " "
 
 def caesar_cipher(message, shift):
     '''Caesar Cipher. 
@@ -109,17 +112,20 @@ def shift_by_letter(letter, letter_shift):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     import string
-    x = string.ascii_uppercase.index(letter)+string.ascii_uppercase.index(letter_shift)
-    if x <= 25 and x >= -25:
-        return string.ascii_uppercase[x]
-    elif x>25:
-        while x > 25:
-            x = x-26
-        return string.ascii_uppercase[x]
+    if str.isalpha(letter) == True:
+        x = string.ascii_uppercase.index(letter)+string.ascii_uppercase.index(letter_shift)
+        if x <= 25 and x >= -25:
+            return string.ascii_uppercase[x]
+        elif x>25:
+            while x > 25:
+                x = x-26
+            return string.ascii_uppercase[x]
+        else:
+            while x < -25:
+                x = x+26
+            return string.ascii_uppercase[x]
     else:
-        while x < -25:
-            x = x+26
-        return string.ascii_uppercase[x]
+        return " "
 
 def vigenere_cipher(message, key):
     '''Vigenere Cipher. 
